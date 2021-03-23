@@ -1,81 +1,107 @@
 // Karma configuration
 // Generated on Mon Sep 10 2018 16:52:24 GMT-0400 (EDT)
 
-module.exports = function(config) {
-  config.set({
+module.exports = function (config) {
+    config.set({
 
-    // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
-
-
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai'],
-
-    // plugins used
-    plugins: ['karma-chai', 'karma-chrome-launcher', 'karma-mocha', 'karma-mocha-reporter'],
-    preprocessors: {
-      './test/*.js': 'coverage'
-    },
-    coverageReporter: {
-      type: 'text-summary',
-      dir: 'coverage/',
-      includeAllSources: true
-    },
-
-    // list of files / patterns to load in the browser
-    files: [
-      'test/*.js',
-      'js/*.js',
-      'js/*.js'
-    ],
+        // base path that will be used to resolve all patterns (eg. files, exclude)
+        basePath: '',
 
 
-    // list of files / patterns to exclude
-    exclude: [
-    ],
+        // frameworks to use
+        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+        frameworks: ['mocha', 'chai'],
+
+        // plugins used
+        plugins: ['karma-chai', 'karma-chrome-launcher', 'karma-mocha', 'karma-mocha-reporter', 'karma-sauce-launcher',
+            'karma-chrome-launcher'],
+
+        preprocessors: {
+            './test/*.js': 'coverage'
+        },
+
+        junitReporter: {
+            outputDir: '', // results will be saved as $outputDir/$browserName.xml
+            outputFile: 'test_jasmine_js.xml', // if included, results will be saved as $outputDir/$browserName/$outputFile
+            suite: '', // suite will become the package name attribute in xml testsuite element
+            useBrowserName: true, // add browser name to report and classes names
+            nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
+            classNameFormatter: undefined, // function (browser, result) to customize the classname attribute in xml testcase element
+            properties: {} // key value pair of properties to add to the section of the report
+        },
+        coverageReporter: {
+            type: 'text-summary',
+            dir: 'coverage/',
+            includeAllSources: true
+        },
+
+        // list of files / patterns to load in the browser
+        files: [
+            'test/*.js',
+            'js/*.js',
+            'js/*.js'
+        ],
 
 
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+        // list of files / patterns to exclude
+        exclude: [],
 
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+        // preprocess matching files before serving them to the browser
+        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        preprocessors: {},
 
 
-    // web server port
-    port: 9876,
+        // test results reporter to use
+        // possible values: 'dots', 'progress'
+        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+        reporters: ['mocha'],
 
 
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
+        // web server port
+        port: 9876,
+        colors: true,
+        browsers: ['ChromeHeadless'],
+        client: {
+            mocha: {
+                // this helps debug
+                reporter: 'html'
+            }
+        },
+        mochaReporter: {
+            showDiff: true
+        },
+        customLaunchers: {
+            ChromeDebug: {
+                base: 'Chrome',
+                flags: ['--remote-debugging-port=9333']
+            }
+        },
+
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
 
 
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+        // level of logging
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_INFO,
 
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: false,
 
 
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+        // start these browsers
+        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        browsers: ['Chrome'],
 
 
-    // Continuous Integration mode
-    // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+        // Continuous Integration mode
+        // if true, Karma captures browsers, runs the tests and exits
+        singleRun: true,
 
-    // Concurrency level
-    // how many browser should be started simultaneous
-    concurrency: Infinity
-  })
+        // Concurrency level
+        // how many browser should be started simultaneous
+        concurrency: Infinity
+    })
 }
