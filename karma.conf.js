@@ -14,7 +14,14 @@ module.exports = function(config) {
 
     // plugins used
     plugins: ['karma-chai', 'karma-chrome-launcher', 'karma-mocha', 'karma-mocha-reporter'],
-
+    preprocessors: {
+      './test/*.js': 'coverage'
+    },
+    coverageReporter: {
+      type: 'text-summary',
+      dir: 'coverage/',
+      includeAllSources: true
+    },
 
     // list of files / patterns to load in the browser
     files: [
