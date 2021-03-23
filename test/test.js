@@ -1,6 +1,6 @@
-describe("com.test", function() {
+describe("check", function() {
 
-    it("trim testing ", function() {
+    it("com.test", function() {
         var trimmed = greet('tri');
 
         expect(trimmed).toBe("tri");
