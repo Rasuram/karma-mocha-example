@@ -1,4 +1,4 @@
-describe("CommonUtil", function() {
+describe("com.test", function() {
 
     it("trim testing ", function() {
         var trimmed = greet('tri');
