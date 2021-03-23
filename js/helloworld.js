@@ -3,6 +3,5 @@ function helloWorld(){
 }
 
 function greet(){
-    const heading = document.querySelector('.greeting');
-    heading.innerHTML = helloWorld();
+    return "tri"
 }
