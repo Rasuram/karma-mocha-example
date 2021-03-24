@@ -1,9 +1,9 @@
 describe("check", function() {
 
     it("com.test", function() {
-        var trimmed = greet('tri');
+        var trimmed = isIconVisible('tri');
 
-        expect(trimmed).toBe("tri");
+        expect(trimmed).toBe(true);
         expect(trimmed).not.toBe(null);
     });
 

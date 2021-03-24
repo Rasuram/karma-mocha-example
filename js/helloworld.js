@@ -5,5 +5,5 @@ function helloWorld(){
 //true = test pass
 //false = test fail
 function isIconVisible() {
-    return false;
+    return true;
 }
