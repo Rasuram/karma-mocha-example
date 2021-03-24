@@ -3,5 +3,5 @@ function helloWorld(){
 }
 
 function greet(){
-    return "tri"
+    return "tr"
 }
