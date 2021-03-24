@@ -2,6 +2,8 @@ function helloWorld(){
     return 'Hello world';
 }
 
-function greet(){
-    return "tri"
+//true = test pass
+//false = test fail
+function isIconVisible() {
+    return false;
 }
