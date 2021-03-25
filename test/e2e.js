@@ -2,7 +2,7 @@ require('chromedriver');
 const assert = require('assert');
 const {Builder, Key, By, until} = require('selenium-webdriver');
 
-describe('Checkout Cdk.com', function () {
+describe('Checkout Cdk.com,', function () {
     let driver;
     before(async function () {
         driver = await new Builder().forBrowser('chrome').build();
