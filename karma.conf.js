@@ -35,8 +35,13 @@ module.exports = function (config) {
             outputFile: 'test.xml', // if included, results will be saved as $outputDir/$browserName/$outputFile
             suite: 'com.result', // suite will become the package name attribute in xml testsuite element
             useBrowserName: false, // add browser name to report and classes names
-            nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
-            classNameFormatter: undefined, // function (browser, result) to customize the classname attribute in xml testcase element
+            nameFormatter: function (browser, result) {
+                return result.description;
+            }, // function (browser, result) to customize the name attribute in xml testcase element
+            classNameFormatter: function (browser, result) {
+                console.log(result)
+                return result.suite[1];
+            }, // function (browser, result) to customize the classname attribute in xml testcase element
             properties: {} // key value pair of properties to add to the section of the report
         },
 
@@ -56,7 +61,11 @@ module.exports = function (config) {
 // start these browsers
 // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
         browsers: ['PhantomJS'],
-
+        coverageReporter: {
+            type: 'text-summary',
+            dir: 'coverage/',
+            includeAllSources: true
+        },
         plugins: [
             'karma-phantomjs-launcher',
             'karma-jasmine',
