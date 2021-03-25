@@ -10,7 +10,7 @@ module.exports = function (config) {
 
 // list of files / patterns to load in the browser
         files: [
-            'test/*.js',
+            'test/test.js',
             'js/*.js'
         ],
 
@@ -27,7 +27,7 @@ module.exports = function (config) {
 // possible values: 'dots', 'progress'
 // available reporters: https://npmjs.org/browse/keyword/karma-reporter
 
-        reporters: ['progress', 'junit', 'coverage'],
+        reporters: ['mocha','progress', 'junit', 'coverage'],
 
 // the default configuration
         junitReporter: {

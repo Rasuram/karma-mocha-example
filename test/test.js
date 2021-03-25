@@ -1,3 +1,4 @@
+/*
 describe("inspection", function() {
 
     it("Form icon should be visible", function() {
@@ -7,4 +8,4 @@ describe("inspection", function() {
         expect(trimmed).not.toBe(null);
     });
 
-});
+});*/

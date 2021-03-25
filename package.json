@@ -10,7 +10,14 @@
   ],
   "author": "Jaz White",
   "scripts": {
-    "test": "karma start karma.conf.js"
+    "e2e": "mocha test test/e2e.js --reporter mocha-junit-reporter --timeout 10000",
+    "test:awesome": "mocha --reporter mochawesome test/e2e.js || true",
+    "open:report": "open mochawesome-report/mochawesome.html",
+    "unit": "karma start karma.conf.js"
+  },
+  "dependencies": {
+    "chromedriver": "^89.0.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -29,6 +36,8 @@
     "karma-mocha-reporter": "^2.2.5",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-sauce-launcher": "^4.3.5",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "mocha-junit-reporter": "^2.0.0",
+    "mochawesome": "^6.2.2"
   }
 }
