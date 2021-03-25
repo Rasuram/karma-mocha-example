@@ -1,6 +1,6 @@
-describe("check", function() {
+describe("", function() {
 
-    it("com.test", function() {
+    it("Form icon should be visible", function() {
         var trimmed = isIconVisible('tri');
 
         expect(trimmed).toBe(true);
