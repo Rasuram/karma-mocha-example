@@ -8,12 +8,12 @@ describe('Checkout Cdk.com', function () {
         driver = await new Builder().forBrowser('chrome').build();
     });
 
-    it('Search favorite in CDK', async function () {
+    it('Search favorite information in CDK', async function () {
         await driver.get('https://www.cdkglobal.com/us');
         await driver.findElement(By.className('first')).click();
         await driver.wait(until.elementLocated(By.className('field-title')), 10000);
         let title = await driver.getTitle();
-        assert.equal(title, 'CDK Global india | Company');
+        assert.equal(title, 'CDK Global | Company');
     });
 
     after(() => driver && driver.quit());

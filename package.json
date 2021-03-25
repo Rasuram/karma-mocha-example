@@ -8,6 +8,7 @@
     "mocha",
     "automation"
   ],
+
   "author": "Jaz White",
   "scripts": {
     "e2e": "mocha test test/e2e.js --reporter mocha-junit-reporter --timeout 10000",

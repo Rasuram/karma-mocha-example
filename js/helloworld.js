@@ -5,4 +5,6 @@ function isIconVisible() {
     return true;
 }
 
+
+
 module.exports = isIconVisible;
