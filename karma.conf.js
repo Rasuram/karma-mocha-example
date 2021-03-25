@@ -40,7 +40,7 @@ module.exports = function (config) {
             }, // function (browser, result) to customize the name attribute in xml testcase element
             classNameFormatter: function (browser, result) {
                 console.log(result)
-                return result.suite[1];
+                return "";
             }, // function (browser, result) to customize the classname attribute in xml testcase element
             properties: {} // key value pair of properties to add to the section of the report
         },
