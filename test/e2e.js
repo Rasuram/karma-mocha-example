@@ -13,7 +13,7 @@ describe('Checkout Cdk.com', function () {
         await driver.findElement(By.className('first')).click();
         await driver.wait(until.elementLocated(By.className('field-title')), 10000);
         let title = await driver.getTitle();
-        assert.equal(title, 'CDK Global | Company');
+        assert.equal(title, 'CDK Global india | Company');
     });
 
     after(() => driver && driver.quit());
