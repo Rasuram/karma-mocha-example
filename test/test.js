@@ -1,4 +1,4 @@
-describe("", function() {
+describe("inspection", function() {
 
     it("Form icon should be visible", function() {
         var trimmed = isIconVisible('tri');
